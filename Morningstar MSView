@@ -1,0 +1,10 @@
+#Morningstar MSView
+export env WINEPREFIX=~/.MSView
+export env WINEDEBUG=fixme-all
+export env WINEARCH=win64
+rm -r $WINEPREFIX
+
+wget https://www.morningstarcorp.com/wp-content/uploads/software-msview-1.6.44.0.zip -nc -P /tmp
+unzip /tmp/software-msview-*.zip -d /tmp/msview
+wine /tmp/msview/setup-MSView.exe
+rm -r /tmp/msview
