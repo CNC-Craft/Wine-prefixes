@@ -1,0 +1,10 @@
+#oshonsoft picsimulatoride
+export env WINEPREFIX=~/.picsimulatoride
+export env WINEDEBUG=fixme-all
+export env WINEARCH=win64
+rm -r $WINEPREFIX
+
+wget https://www.oshonsoft.com/demo1357/picsimulatoridesetup918demo.exe -nc -P /tmp
+winetricks vb6run
+wine /tmp/picsimulatoridesetup918demo.exe
+rm -r /tmp/picsimulatoridesetup918demo.exe
